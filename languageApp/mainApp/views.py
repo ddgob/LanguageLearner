@@ -10,3 +10,10 @@ def content(request):
     }
     return render(request, "mainApp/content.html")
 
+def read_content(request):
+    # Placeholder view for the 'Read' button
+    return render(request, 'mainApp/read_content.html')
+
+def flash_cards(request):
+    # Placeholder view for the 'Flash Cards' button
+    return render(request, 'mainApp/flash_cards.html')

@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainApp.views import content
+from mainApp.views import content,read_content, flash_cards
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('content', content),
-    path('', content, name='content')
+    path('', content, name='content'),
+    path('read/', read_content, name='read_content'),  # Ensure this line is present
+    path('flash-cards/', flash_cards, name='flash_cards')
 ]

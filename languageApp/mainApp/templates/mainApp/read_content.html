@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Read Content</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .movie-poster {
+            width: 200px;
+            height: 300px;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .movie-poster:hover {
+            transform: scale(1.1);
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Read Content Page</h1>
+
+    <div class="movie-poster" onclick="openMovie('movie1.html')">
+        <img src="movie1.jpg" alt="Movie 1 Poster">
+    </div>
+
+    <div class="movie-poster" onclick="openMovie('movie2.html')">
+        <img src="movie2.jpg" alt="Movie 2 Poster">
+    </div>
+
+    <div class="movie-poster" onclick="openMovie('movie3.html')">
+        <img src="movie3.jpg" alt="Movie 3 Poster">
+    </div>
+
+    <!-- Add more movie posters as needed -->
+
+    <script>
+        function openMovie(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
