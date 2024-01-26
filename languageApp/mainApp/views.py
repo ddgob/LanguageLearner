@@ -33,3 +33,9 @@ def translate(request):
             return JsonResponse({'error': 'Error from OpenAI API'}, status=500)
     else:
         return JsonResponse({'error': 'Invalid request'}, status=400)
+    
+
+def view_content(request):
+    contents = Content.objects.all()
+    contentTitles = [content.title for content in contents]
+    return render(request, "mainApp/view_content.html", {'titles': contentTitles})
