@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from mainApp.views import read_content
 from mainApp.views import flashcards
+from mainApp.views import translate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('read_content', read_content),
-    path('flashcards', flashcards)
+    path('flashcards', flashcards),
+    path('translate/', translate, name='translate')
 ]
