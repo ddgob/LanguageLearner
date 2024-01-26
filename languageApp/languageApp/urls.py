@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainApp.views import content
+from mainApp.views import read_content
+from mainApp.views import flashcards
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('content', content),
+    path('read_content', read_content),
+    path('flashcards', flashcards)
 ]
