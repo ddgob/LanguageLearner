@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+        <script>
+            console.log('Content successfully loaded!');
+        </script>
+        
+        <header>
+            <h1>Lorem</h1>
+            <p>kk</p>
+        </header>
+        
+        <section>
+            <h2>"Why Choose Cha Cha Learning?"</h2>
+            <p>Our platform offers:</p>
+            <ul>
+                <li>Interactive lessons</li>
+                <li>Engaging exercises</li>
+                <li>Personalized learning plans</li>
+                <li>Native speaker support</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Get Started Today!</h2>
+            <p>{{ cta }}</p>
+            
+            <!-- Add 'Read' and 'Flash Cards' buttons using Bootstrap classes -->
+            <div class="d-grid gap-2">
+                <a href="{% url 'read_content' %}" class="btn btn-primary btn-lg">Read</a>
+                <a href="{% url 'flash_cards' %}" class="btn btn-secondary btn-lg">Flash Cards</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Cha Cha Learning. All rights reserved.</p>
+        </footer>
+    </body>
+{% endblock %}

@@ -1,0 +1,2850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article 1 - Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 800px; 
+            border: none;
+        }
+
+        .translation-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .section-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sound-icon {
+            display: inline-block;
+            margin-top: 10px;
+            width: 20px;
+            height: 20px;
+            background-image: url('sound-icon.png');
+            background-size: cover;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h1>Article 1 Display</h1>
+
+    <div class="translation-container">
+        <div class="section">
+            <div class="section-header">Selected Text:</div>
+            <div id="selected-text">Text to be translated will appear here.</div>
+        </div>
+        <div class="section">
+            <div class="section-header">Translation:</div>
+            <div id="translated-text">[Translation will appear here]</div>
+            <div class="sound-icon"></div>
+        </div>
+    </div>
+
+    <script>
+        function displayHighlightedText() {
+            document.onmouseup = document.onkeyup = function() {
+                const selectedText = window.getSelection().toString();
+                if (selectedText.length > 0) {
+                    document.getElementById('selected-text').innerText = selectedText;
+                }
+            };
+        }
+
+        displayHighlightedText();
+    </script>
+    
+</body>
+
+</script><style>
+    :root {
+        --text-base-secondary: rgba(0, 0, 0, 0.64);
+        --text-base-primary: #000;
+        --text-base-disabled: rgba(0, 0, 0, 0.32);
+        --gradient-brand-orange: linear-gradient(180deg, #FB7637 0.2%, #FB5404 99.79%);
+        --shading-base-stroke-regular: rgba(0, 0, 0, 0.08);
+        --shading-base-stroke-hair: rgba(0, 0, 0, 0.16);
+        --brand-orange: #FB5404;
+        --hover-opacity: 0.9;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Lora';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqJ2nPWc3ZyhTjcV.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Lora';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqt2nPWc3ZyhTjcV.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Lora';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqB2nPWc3ZyhTjcV.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Lora';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2nPWc3ZyhTjcV.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Lora';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92nPWc3ZyhTg.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuxJMkq18ndeYxZ2JTg.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuxJFkq18ndeYxZ2JTg.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuxJOkq18ndeYxZ2JTg.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuxJPkq18ndeYxZ2JTg.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkq18ndeYxZ0.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfCRc4AMP6lbBP.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfABc4AMP6lbBP.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfCBc4AMP6lbBP.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBxc4AMP6lbBP.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfCxc4AMP6lbBP.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc4AMP6lbBP.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    html {
+        font-family: 'Inter', 'Verdana', 'Arial', sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 1232px;
+        padding: 0 16px 40px;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 1200px) {
+        .container {
+            padding: 0 16px 30px;
+            width: 100%;
+        }
+    }
+
+
+    @media (max-width: 960px) {
+        .container {
+            padding: 0 16px 30px;
+            width: 100%;
+        }
+    }
+
+    .header {
+        margin: 0 auto;
+        width: min(1200px, 100%);
+        padding: 12px 0;
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        position: sticky;
+        z-index: 1000;
+        background-color: #fff;
+        transition: top 0.3s;
+    }
+
+    .header.scroll-up {
+        top: 0;
+    }
+
+    .header.scroll-down {
+        top: -100%;
+    }
+
+    .white-fix {
+        height: 56px;
+        position: absolute;
+        background-color: #fff;
+        width: 16px;
+        left: -16px;
+        top: 0;
+    }
+
+    .header-install {
+        width: 32%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.04);
+        border-radius: 12px;
+        color: #000000;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.55;
+        letter-spacing: -0.18px;
+        text-decoration: none;
+        padding: 10px 24px;
+    }
+
+    .header-install img {
+        margin-right: 8px;
+    }
+
+    @media (max-width: 960px) {
+        .header-install {
+            display: none;
+        }
+    }
+
+    @media (min-width: 961px) {
+        .img-mobile, .show-mobile {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 960px) {
+        .img-desktop, .show-desktop {
+            display: none !important;
+        }
+    }
+</style><style>
+    .breadcrumbs {
+        padding: 16px 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.55;
+        color: rgba(0, 0, 0, 0.48);
+        width: 100%;
+    }
+
+    .breadcrumbs a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.48);
+    }
+
+    .breadcrumbs .current {
+        color: black;
+    }
+
+    .breadcrumbs img {
+        vertical-align: middle;
+    }
+
+    .column-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 85px;
+    }
+
+    @media (max-width: 640px) {
+        .column-container {
+            margin-bottom: 56px;
+        }
+    }
+
+    .column1 {
+        width: 57.5%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column2 {
+        width: 32%;
+        margin-left: 24px;
+        position: sticky;
+        top: 32px;
+        height: 100%;
+    }
+
+    @media (max-width: 960px) {
+        .column1 {
+            width: 100%;
+        }
+
+        .column2 {
+            display: none;
+        }
+    }
+
+    .h1 {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.48px;
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 960px) {
+        .h1 {
+            font-size: calc(32px + (48 - 32) * ((100vw - 640px) / (960 - 640)));
+            line-height: 1.19;
+            letter-spacing: -0.32px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .h1 {
+            font-size: 32px;
+        }
+    }
+
+    .tldr {
+        font-family: 'Lora', 'Verdana', 'Arial', sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 960px) {
+        .tldr {
+            font-size: 20px;
+        }
+    }
+
+    .tldr-label {
+        font-family: 'Inter', 'Verdana', 'Arial', sans-serif;
+        font-weight: 800;
+        letter-spacing: 0.96px;
+        color: rgba(0, 0, 0, 0.16);
+    }
+
+    @media (max-width: 960px) {
+        .tldr-label {
+            letter-spacing: 0.8px;
+        }
+    }
+
+    .h2 {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 1.25;
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 960px) {
+        .h2 {
+            font-size: 24px;
+        }
+    }
+
+    .insights-block {
+        margin-top: 16px;
+    }
+
+    .insights {
+        list-style: none inside none;
+    }
+
+    .insights-item {
+        display: flex;
+        flex-direction: row;
+        column-gap: 8px;
+        margin-bottom: 16px;
+        font-family: 'Lora', 'Verdana', 'Arial', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.56;
+        letter-spacing: 0.032px;
+    }
+
+    .insights-item:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .related {
+        width: 100%;
+        margin-top: 32px;
+        margin-bottom: 48px;
+    }
+
+    h3 {
+        margin-top: 32px;
+        margin-bottom: 20px;
+        font-size: 26px;
+    }
+
+    h3:first-child {
+        margin-top: 0;
+    }
+
+    .faq-block {
+        margin-bottom: 48px;
+    }
+
+    .timestamped-summary {
+        margin-bottom: 48px;
+    }
+
+    .disclaimer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
+    }
+
+    @media (max-width: 960px) {
+        .disclaimer {
+            margin: 16px 0 24px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .disclaimer {
+            gap: 6px;
+        }
+    }
+
+    .disclaimer.show-desktop {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .qa-list {
+        list-style: none;
+    }
+
+    .qa-list__item {
+        margin-bottom: 24px;
+    }
+
+    .qa-list__item:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .qa-list__question {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    @media (max-width: 640px) {
+        .qa-list__question {
+            font-size: 20px;
+        }
+    }
+
+    .qa-list__answer {
+        font-family: 'Lora', 'Verdana', 'Arial', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.56;
+        display: flex;
+        flex-direction: row;
+        column-gap: 8px;
+    }
+
+    .qa-list__answer-dash {
+        color: rgba(0, 0, 0, 0.48);
+    }
+
+    @media (max-width: 640px) {
+        .qa-list__answer {
+            font-size: 18px;
+        }
+    }
+
+    .key-ideas {
+        list-style: none;
+    }
+
+    .key-ideas-item {
+        display: flex;
+        flex-direction: row;
+        column-gap: 8px;
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.56;
+    }
+
+    .key-ideas-item__timestamp {
+        font-family: 'Inter', 'Verdana', 'Arial', sans-serif;
+        color: #007AFF;
+        display: inline;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .key-ideas-item__title {
+        font-family: 'Lora', 'Verdana', 'Arial', sans-serif;
+        display: inline;
+    }
+
+    .article-actions-container {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .article-actions__comments, .article-actions__flag {
+        position: relative;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.04);
+        display: flex;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        border: none;
+    }
+
+    .article-actions__thumbs {
+        display: flex;
+    }
+
+    .thumbs-up {
+        position: relative;
+        border-radius: 12px 0 0 12px;
+        background: rgba(0, 0, 0, 0.04);
+        display: flex;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    .thumbs-up:hover {
+        background: rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+    }
+
+    .thumbs-up::after {
+        content: '';
+        width: 1px;
+        border-left: 1px solid rgba(0, 0, 0, 0.08);
+        height: 24px;
+        position: absolute;
+        top: 12px;
+        right: 0;
+    }
+
+    .thumbs-down {
+        position: relative;
+        border-radius: 0 12px 12px 0;
+        background-color: rgba(0, 0, 0, 0.04);
+        display: flex;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    .thumbs-down:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+    }
+
+    @media (max-width: 640px) {
+        .thumbs-up, .thumbs-down, .article-actions__comments, .article-actions__flag {
+            padding: 12px 16px;
+        }
+    }
+
+    .thumbs-up__icon, .thumbs-down__icon, .article-actions__flag-icon, .article-actions__flag-text {
+        transition: all 0.2s ease;
+    }
+
+
+    .article-actions__thumbs_default .thumbs-up__icon_active {
+        opacity: 0;
+    }
+
+    .article-actions__thumbs_default .thumbs-down__icon_active {
+        opacity: 0;
+    }
+
+    .article-actions__thumbs_liked .thumbs-up__icon_default {
+        opacity: 0;
+    }
+
+    .article-actions__thumbs_liked .thumbs-up__icon_active {
+        opacity: 1;
+    }
+
+    .article-actions__thumbs_liked .thumbs-up {
+        background-color: #34C759;
+    }
+
+    .article-actions__thumbs_liked .thumbs-up__counter {
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+
+    .article-actions__thumbs_disliked .thumbs-down__icon_default {
+        opacity: 0;
+    }
+
+    .article-actions__thumbs_disliked .thumbs-down__icon_active {
+        opacity: 1;
+    }
+
+    .article-actions__thumbs_disliked .thumbs-down {
+        background-color: #FF3B30;
+    }
+
+    .article-actions__thumbs_disliked .thumbs-down__counter {
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+
+    .thumbs-up__counter, .thumbs-down__counter, .article-actions__comments-counter, .article-actions__flag-text {
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.56;
+    }
+
+    @media (max-width: 640px) {
+        .thumbs-up__counter, .thumbs-down__counter, .article-actions__comments-counter, .article-actions__flag-text {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    .thumbs-up__icon_active, .thumbs-down__icon_active, .article-actions__flag-icon_active {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        opacity: 0;
+    }
+
+    @media (max-width: 640px) {
+        .thumbs-up__icon_active, .thumbs-down__icon_active, .article-actions__flag-icon_active {
+            top: 12px;
+            left: 16px;
+        }
+    }
+
+    .vote {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .vote__section {
+        padding: 5px;
+    }
+
+    .vote__title {
+        font-size: 12.4px;
+        font-weight: bold;
+        color: #555555;
+    }
+
+    .rating-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rating {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .rating-0 {
+        filter: grayscale(100%);
+    }
+
+    .rating > input {
+        display: none;
+    }
+
+    .rating > label {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        margin-top: auto;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 76%;
+        transition: .3s;
+    }
+
+    .rating > input:checked ~ label,
+    .rating > input:checked ~ label ~ label {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+    }
+
+
+    .rating > input:not(:checked) ~ label:hover,
+    .rating > input:not(:checked) ~ label:hover ~ label {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+    }
+
+    .keyword-link {
+        color: #2560CD;
+        text-decoration: none;
+    }
+
+    .keyword-link:hover {
+        text-decoration: underline;
+    }
+
+    .related-videos__header {
+font-size: 32px;
+font-style: normal;
+font-weight: 800;
+line-height: 1.25;
+margin-bottom: 24px;
+}
+
+@media (max-width: 960px) {
+.related-videos__header {
+font-size: 24px;
+}
+}
+
+.related-videos__link {
+color: #007AFF;
+text-decoration: none;
+}
+
+.related-videos__link.show-mobile {
+display: block;
+margin-top: 24px;
+}
+
+.related-videos__list {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+@media (max-width: 640px) {
+.related-videos__list {
+overflow-x: auto;
+overflow-y: hidden;
+padding-bottom: 10px;
+}
+}
+
+.related-videos__list li {
+border-radius: 8px;
+list-style: none;
+}
+
+.related-video__container {
+width: 220px;
+}
+
+@media (max-width: 640px) {
+.related-video__container {
+width: auto;
+}
+}
+
+.related-video img {
+object-fit: cover;
+border-radius: 8px;
+width: 220px;
+height: 124px;
+}
+
+
+@media (max-width: 640px) {
+.related-video img {
+width: 142px;
+height: 80px;
+flex: 0 0 142px;
+}
+}
+
+.related-video {
+width: 100%;
+height: 100%;
+display: flex;
+flex: 1;
+justify-content: flex-start;
+overflow: hidden;
+flex-direction: column;
+text-decoration: none;
+color: black;
+}
+
+@media (max-width: 640px) {
+.related-video {
+overflow: visible;
+flex-direction: row;
+}
+}
+
+.related-video__title {
+margin-top: 6px;
+font-size: 16px;
+font-style: normal;
+font-weight: 800;
+line-height: 22px;
+}
+
+@media (max-width: 640px) {
+.related-video__title {
+flex-grow: 1;
+margin-top: 0;
+margin-left: 12px;
+max-height: 84px;
+overflow: hidden;
+}
+}
+
+@media only screen and (min-width: 960px) {
+.related-videos__list > li:hover {
+background: #F0F0F0;
+cursor: pointer;
+}
+}
+
+    .article-actions {
+        margin-top: 16px;
+    }
+
+    .feedback {
+        margin-bottom: 32px;
+    }
+</style><style>
+    .disclaimer-text {
+        flex: 1;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.43;
+        min-height: 56px;
+        color: rgba(0, 0, 0, 0.48);
+    }
+
+    .disclaimer-text a {
+        text-decoration: none;
+        color: var(--text-base-secondary, rgba(0, 0, 0, 0.80));
+    }
+
+    @media (max-width: 640px) {
+        .disclaimer-text {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    }
+
+    .disclaimer.hidden {
+        display: none;
+    }
+
+    .disclaimer-video {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid;
+        aspect-ratio: 16 / 9;
+        position: relative;
+        cursor: pointer;
+    }
+</style><style>
+    .lights-banner-light {
+        left: -50%;
+    }
+
+    .lights-banner-light--yellow {
+        animation: moving-light-yellow 9600ms ease-in-out infinite;
+    }
+
+    .lights-banner-light--violet {
+        animation: moving-light-violet 14400ms ease-in-out infinite;
+    }
+
+    .lights-banner-light--blue {
+        animation: moving-light-blue 12000ms ease-in-out infinite;
+    }
+
+    @keyframes moving-light-yellow {
+        0% {
+            transform: translate(-30%, -20%);
+        }
+        50% {
+            transform: translate(30%, -30%);
+        }
+        100% {
+            transform: translate(-30%, -20%);
+        }
+    }
+
+    @keyframes moving-light-violet {
+        0% {
+            transform: translate(-40%, -30%);
+        }
+        50% {
+            transform: translate(40%, -20%);
+        }
+        100% {
+            transform: translate(-40%, -30%);
+        }
+    }
+
+    @keyframes moving-light-blue {
+        0% {
+            transform: translate(20%, -20%);
+        }
+        50% {
+            transform: translate(-20%, -25%);
+        }
+        100% {
+            transform: translate(20%, -20%);
+        }
+    }
+
+     @media (prefers-reduced-motion: reduce) {
+        .lights-banner-light--yellow {
+            animation: none;
+        }
+
+        .lights-banner-light--violet {
+            animation: none;
+        }
+
+        .lights-banner-light--blue {
+            animation: none;
+        }
+    }
+</style><style>
+    
+    .lbs .lights-banner-light {
+        position: absolute;
+        height: 700%;
+    }
+
+    
+
+    .lbs {
+        cursor: pointer;
+        position: relative;
+        background-color: #141414;
+        overflow: hidden;
+        padding: 8px 8px 8px 16px;
+        border-radius: 8px;
+    }
+
+    .lbs-button {
+        margin-left: auto;
+    }
+
+    .lbs__icon > img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .lbs__content {
+        position: relative;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .lbs__text {
+        color: #FFF;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 20px; /* 125% */
+
+        max-width: 136px;
+    }
+
+    .lbs-button__app-store-download {
+        height: 46px;
+        width: auto;
+    }
+
+    .lbs-button__browser-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .lbs-button.desktop-safari,
+    .lbs-button.default {
+        display: flex;
+        padding: 6px 12px 6px 10px;
+
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        border-radius: 8px;
+        border: 0.5 solid var(--shading-base-stroke-hair, rgba(0, 0, 0, 0.16));
+        background: #FFF;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+        text-decoration: none;
+
+        max-width: 140px;
+    }
+
+    .lbs-button__text {
+        color: #000;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px; /* 120% */
+        letter-spacing: 0.1px;
+    }
+
+    @media screen and (max-width: 640px) {
+        .lbs-button .lbs-button__browser-name {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px;
+        }
+    }
+
+    @media screen and (min-width: 640px) {
+    
+        .lbs .lights-banner-light {
+            transform: scale(10);
+        }
+
+    
+
+        .lbs {
+            padding: 16px 24px;
+            border-radius: 12px;
+        }
+
+        .lbs__content {
+            gap: 16px;
+        }
+
+        .lbs__text {
+            font-size: 24px;
+            line-height: 28px; /* 116.667% */
+            letter-spacing: -0.12px;
+
+            max-width: 280px;
+        }
+
+        .lbs__icon > img {
+            width: 56px;
+            height: 56px;
+        }
+
+        .lbs-button__app-store-download {
+            width: 190px;
+            height: 64px;
+        }
+
+        .lbs-button.desktop-safari,
+        .lbs-button.default {
+            border-radius: 12px;
+            padding: 10px 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            max-width: none;
+        }
+
+        .lbs-button__text {
+            letter-spacing: -0.18px;
+            text-decoration: none;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 22px;
+        }
+    }
+
+</style><style>
+    
+    .lbm .lights-banner-light {
+        position: absolute;
+        height: 300%;
+    }
+
+    
+
+    .lbm {
+        cursor: pointer;
+        position: relative;
+        background-color: #141414;
+        overflow: hidden;
+        padding: 16px 20px 20px 20px;
+        border-radius: 16px;
+    }
+
+    .lbm__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-image: url("/shared/static/lights-banner/lights-banner-mask-m-right.png");
+        background-repeat: no-repeat;
+        background-position: right 0 top 0;
+        background-size: contain;
+    }
+
+    .lbm__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .lbm__text {
+        color: #FFF;
+
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 28px; /* 116.667% */
+        letter-spacing: -0.12px;
+    }
+
+    .lbm-button__browser-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .lbm-button.desktop-safari,
+    .lbm-button.default {
+        display: flex;
+        padding: 10px 20px;
+
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        border-radius: 12px;
+        border: 0.5px solid var(--shading-base-stroke-hair, rgba(255, 255, 255, 0.24));
+        background: #FFF;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+        text-decoration: none;
+    }
+
+    .lbm-button__text {
+        color: #000;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px; /* 122.222% */
+    }
+</style><style>
+    .lbl .lights-banner-light {
+        position: absolute;
+        height: 300%;
+    }
+
+    .lbl {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        border-radius: 20px;
+        background-color: #141414;
+        overflow: hidden;
+    }
+
+    .lbl__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-image: url("/shared/static/lights-banner/lights-banner-mask-mobile-top.png");
+        background-repeat: no-repeat;
+        background-position: left 0 top -2%;
+        background-size: contain;
+        transform: translateX(-4px);
+    }
+
+    .lbl__content {
+        margin: 32px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        max-width: min(100%, 800px);
+        z-index: 1;
+    }
+
+    .lbl__text {
+        color: #fff;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 36px;
+        letter-spacing: -0.32px;
+        max-width: min(90%, 498px);
+    }
+
+    .lbl {
+        cursor: pointer;
+    }
+
+    .lbl-button__container.mobile-safari,
+    .lbl-button__container.desktop-safari,
+    .lbl-button__container.default {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lbl-button__browser-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .lbl-button-options {
+        margin-top: 12px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .lbl-button-options__label {
+        color: rgba(255, 255, 255, 0.64);
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 137.5% */
+    }
+
+    .lbl-button-option {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+
+        color: rgba(255, 255, 255, 0.80);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 137.5% */
+        text-decoration: none;
+    }
+
+    .lbl-button-option__icon {
+        height: auto;
+        width: 16px;
+    }
+
+    .mobile-safari .lbl-button__app-store-download {
+        width: 168px;
+        height: 56px;
+    }
+
+    .desktop-safari .lbl-button,
+    .default .lbl-button {
+        display: flex;
+        padding: 10px 16px;
+
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        border-radius: 16px;
+        border: 0.5 solid var(--shading-base-stroke-hair, rgba(0, 0, 0, 0.16));
+        background: #FFF;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+
+        color: #000;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px; /* 122.222% */
+        letter-spacing: -0.18px;
+        text-decoration: none;
+    }
+
+
+    @media (min-width: 961px) {
+        .desktop-safari .lbl-button,
+        .default .lbl-button {
+            padding: 16px 24px;
+            gap: 12px;
+            max-width: none;
+            font-size: 20px;
+            line-height: 26px; /* 130% */
+            letter-spacing: -0.2px;
+        }
+
+        .lbl-button__container {
+            max-width: 680px;
+        }
+    }
+
+    @media screen and (min-width: 640px) {
+        .lbl__background {
+            background-image: url("/shared/static/lights-banner/lights-banner-mask-desktop-left.png"), url("/shared/static/lights-banner/lights-banner-mask-desktop-right.png");
+            background-repeat: no-repeat, no-repeat;
+            background-position: left 0 top 0, right 0 top 0;
+            background-size: contain, contain;
+        }
+
+        .lbl {
+            border-radius: 24px;
+        }
+    }
+
+</style><style>
+    .grow-wrap {
+        /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+        display: grid;
+    }
+
+    .grow-wrap::after {
+        /* Note the weird space! Needed to preventy jumpy behavior */
+        content: attr(data-replicated-value) " ";
+        /* This is how textarea text behaves */
+        white-space: pre-wrap;
+        /* Hidden from view, clicks, and screen readers */
+        visibility: hidden;
+    }
+
+    .grow-wrap > textarea {
+        /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+        resize: none;
+        /* Firefox shows scrollbar on growth, you can hide like this. */
+        overflow: hidden;
+    }
+
+    .grow-wrap > textarea,
+    .grow-wrap::after {
+        /* Identical styling required!! */
+        border: none;
+        padding: 0;
+        font: inherit;
+        overflow-wrap: anywhere;
+        /* Place on top of each other */
+        grid-area: 1 / 1 / 2 / 2;
+    }
+</style><style>
+    .report-article-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 10000;
+
+        background-blend-mode: multiply;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .report-article-modal--reasons .report-article-modal__reasons {
+        display: flex;
+    }
+
+    .report-article-modal--reasons .report-article-modal__header_reasons {
+        display: block;
+    }
+
+    .report-article-modal--description .report-article-modal__header_description,
+    .report-article-modal--thanks .report-article-modal__header_thanks {
+        display: block;
+    }
+
+    .report-article-modal--submit-active .report-article-modal__description-submit--active,
+    .report-article-modal--submit-inactive .report-article-modal__description-submit--inactive,
+    .report-article-modal--description .report-article-modal__description,
+    .report-article-modal--thanks .report-article-modal__thanks {
+        display: flex;
+    }
+
+    .report-article-modal__description-additional {
+        color: rgba(255, 255, 255, 0.48);
+        text-align: center;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 125% */
+        letter-spacing: -0.08px;
+
+        margin-bottom: 20px;
+        margin-top: -20px;
+    }
+
+    .report-article-modal__thanks {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .report-article-modal_active {
+        display: flex;
+    }
+
+    .report-article-modal__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .report-article-modal__close-button {
+        width: 17px;
+        height: 17px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .report-article-modal__close-button:hover {
+        outline: none;
+    }
+
+    .report-article-modal__block {
+        position: relative;
+        border-radius: 24px;
+        background: rgba(0, 0, 0, 0.80);
+        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.25);
+
+        padding: 60px 16px 80px;
+        max-width: 400px;
+    }
+
+    .report-article-modal__form {
+
+    }
+
+    .report-article-modal__description-input {
+        display: flex;
+        gap: 12px;
+        padding: 4px 4px 4px 16px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 12px;
+        border: 1px solid var(--shading-base-stroke-regular, rgba(255, 255, 255, 0.16));
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .report-article-modal__description-input textarea {
+        overflow-wrap: anywhere;
+        background: transparent;
+        outline: none;
+
+        color: #FFF;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 125% */
+        letter-spacing: -0.08px;
+    }
+
+    .report-article-modal__description-input:has(> .grow-wrap > textarea:focus) {
+        border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    .report-article-modal__description-submit {
+        width: 32px;
+        height: 32px;
+
+        border-radius: 8px;
+        border: 0;
+        display: none;
+        padding: 5px 8px;
+        justify-content: center;
+        align-items: baseline;
+        gap: 6px;
+
+        align-self: flex-end;
+    }
+
+    .report-article-modal__description-submit--inactive {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .report-article-modal__description-submit--active {
+        background: var(--gradient-brand-orange, linear-gradient(180deg, #FB7637 0.2%, #FB5404 99.79%));
+        cursor: pointer;
+    }
+
+    .report-article-modal__flag, .report-article-modal__checkmark {
+        display: block;
+        margin: 0 auto 12px;
+    }
+
+    .report-article-modal__header {
+        display: none;
+        color: #FFF;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 36px; /* 112.5% */
+        letter-spacing: -0.32px;
+        margin-bottom: 32px;
+    }
+
+    .report-article-modal__reasons {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 12px 8px;
+        align-self: stretch;
+        flex-wrap: wrap;
+    }
+
+    .report-article-modal__reason {
+        display: flex;
+        padding: 9px 16px;
+        justify-content: center;
+        gap: 6px;
+
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: transparent;
+
+        cursor: pointer;
+
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+        text-overflow: ellipsis;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 125% */
+        letter-spacing: -0.08px;
+    }
+
+    .report-article-modal__reason:hover {
+        border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    .report-article-modal__description {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .report-article-modal__description-button {
+        display: flex;
+        width: 200px;
+        cursor: pointer;
+        border: 0;
+        padding: 9px 16px;
+        justify-content: center;
+        align-items: baseline;
+        gap: 6px;
+        border-radius: 12px;
+        background: var(--gradient-brand-orange, linear-gradient(180deg, #FB7637 0.2%, #FB5404 99.79%));
+        overflow: hidden;
+        color: #FFF;
+        text-align: center;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 125% */
+    }
+
+    .article-actions__flag {
+        cursor: pointer;
+    }
+
+    .article-actions__flag_flagged .article-actions__flag-text_inactive {
+        display: none;
+    }
+
+    .article-actions__flag:not(.article-actions__flag_flagged) .article-actions__flag-text_active {
+        display: none;
+    }
+
+    .article-actions__flag-icon {
+        width: 18px;
+        height: 28px;
+    }
+
+    .article-actions__flag-icon_active {
+        opacity: 0;
+    }
+
+    .article-actions__flag_flagged .article-actions__flag-icon_default {
+        opacity: 0;
+    }
+
+    .article-actions__flag_flagged .article-actions__flag-icon_active {
+        opacity: 1;
+    }
+
+    .article-actions__flag-text {
+        color: #000;
+    }
+
+    .article-actions__flag_flagged .article-actions__flag-text {
+        color: #F41306;
+        font-weight: 600;
+    }
+
+    @media (min-width: 640px) {
+        .article-actions__flag-text {
+            min-width: 134px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .report-article-modal__block {
+            border-radius: 0;
+            max-width: none;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .report-article-modal__close {
+            top: 88px
+        }
+    }
+
+</style><script src=https://www.youtube.com/iframe_api defer></script><script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Makers Fellowship: Free Entrepreneurship Education &amp; Mentorship",
+  "image": "https://eightify.app/summary/mathematics/makers-fellowship-free-entrepreneurship-education-mentorship.png",
+  "author": {
+    "@type": "Organization",
+    "name": "Eightify",
+    "url": "https://eightify.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Eightify",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://eightify.app/landing/images/logo@2x.png"
+    }
+  },
+  "datePublished": "2023-08-11 20:10:18",
+  "dateModified": "2023-08-11 20:10:18",
+  "description": "The Makers Fellowship program aims to provide free entrepreneurship education and mentorship to young individuals, particularly low-income engineers, in order to train them to create successful businesses in the future."
+}
+</script><script type=application/ld+json>
+    {
+      "@context": "https://schema.org/",
+      "@type": "VideoObject",
+      "name": "Makers Fellowship: Free Entrepreneurship Education &amp; Mentorship",
+  "uploadDate": "2023-08-11 20:10:18",
+  "thumbnailUrl": "https://i.ytimg.com/vi/mwyKVXSiN6M/hqdefault.jpg",
+  "description": "The Makers Fellowship program aims to provide free entrepreneurship education and mentorship to young individuals, particularly low-income engineers, in order to train them to create successful businesses in the future.",
+  "contentUrl": "https://www.youtube.com/embed/mwyKVXSiN6M",
+  "embedUrl": "https://www.youtube.com/embed/mwyKVXSiN6M",
+  "hasPart": [
+    
+        
+        {
+          "@type": "Clip",
+          "name": "The speaker, with a strong background in entrepreneurship, emphasizes their commitment to developing young individuals and highlights the success of the Makers Fellowship in hiring and mentoring highly skilled recruits.",
+          "startOffset": 0,
+        
+            "endOffset": 862,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=0"
+        },
+        
+        {
+          "@type": "Clip",
+          "name": "Latin American makers from Brazil, Mexico, Argentina, Colombia, and Peru came together to promote entrepreneurship and showcase successful businesses, with a focus on training a large number of makers to create successful businesses in the future through internships, skills training, and guidance in fundraising and startup mindset.",
+          "startOffset": 862,
+        
+            "endOffset": 1183,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=862"
+        },
+        
+        {
+          "@type": "Clip",
+          "name": "The makers community aims to make valuable content accessible to a wider audience, particularly low-income individuals, by providing free entrepreneurship education and matching exceptional low-income engineers with suitable startups through their Makers Fellowship program.",
+          "startOffset": 1183,
+        
+            "endOffset": 1715,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=1183"
+        },
+        
+        {
+          "@type": "Clip",
+          "name": "The Makers Fellowship program offers two different fellowships for interns/new recruits and early stage founders, providing training in entrepreneurial skills and hard/soft skills, with monthly themes, mentorship, and access to educational resources for individuals aged 18-24.",
+          "startOffset": 1715,
+        
+            "endOffset": 2132,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=1715"
+        },
+        
+        {
+          "@type": "Clip",
+          "name": "The Makers Fellowship program is accepting applications for its upcoming batch, offering opportunities for business and coding fellows to start their own startups and learn from experienced entrepreneurs, with a focus on developing the ecosystem.",
+          "startOffset": 2132,
+        
+            "endOffset": 2667,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=2132"
+        },
+        
+        {
+          "@type": "Clip",
+          "name": "It is important to build a relationship with the company and it is recommended for students to complete their studies before joining a startup, but dropping out of college to work as a software engineer is not uncommon and technical skills are valued over a degree.",
+          "startOffset": 2667,
+        
+            "endOffset": 3070,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=2667"
+        },
+        
+        {
+          "@type": "Clip",
+          "name": "Join the Makers community and apply to their technical program, especially if there&#39;s a chance to work under a female technical founder, as they are looking for someone with devops experience; working at a top startup can provide valuable exposure to talented individuals and help in understanding what makes a great team, making it easier to recruit and build a successful business.",
+          "startOffset": 3070,
+        
+            "endOffset": 3431,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=3070"
+        },
+        
+        {
+          "@type": "Clip",
+          "name": "Applicants for the fellowship should focus on doing their best, as there are no specific skills or areas of study prioritized; starting a business in Venezuela is unlikely to receive venture backing, except for rare cases; remote work is available for fellows with no constraints or pay reduction, regardless of location.",
+          "startOffset": 3431,
+        
+            "endOffset": 3663,
+        
+        "url": "https://youtu.be/mwyKVXSiN6M?t=3431"
+        }
+        
+    
+    ]
+  }
+</script><script type=application/ld+json>
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Makers Fellowship: Free Entrepreneurship Education &amp; Mentorship",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "3.4",
+      "ratingCount": "10",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+
+    </script><style>
+    
+    .sticky-bottom-install .lights-banner-light {
+        position: absolute;
+        height: 1000%;
+    }
+
+    
+
+    .sticky-bottom-install {
+        z-index: 10;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        border-radius: 12px 12px 0 0;
+        background: #141414;
+        overflow: hidden;
+    }
+
+    .sticky-bottom-install__inner {
+        position: relative;
+        padding: 8px 8px 8px 16px;
+    }
+
+    .sticky-install-button {
+        margin-left: auto;
+    }
+
+    .sticky-install-button.default {
+        display: flex;
+        padding: 6px 12px 6px 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        border: 0.5 solid var(--shading-base-stroke-hair, rgba(0, 0, 0, 0.16));
+        background: #FFF;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+        text-decoration: none;
+        max-width: 140px;
+    }
+
+    .sticky-install-button__text {
+        color: #000;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px; /* 120% */
+        letter-spacing: 0.1px;
+    }
+
+    .sticky-install-button__browser-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .sticky-install-button__browser-name {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+    }
+
+    .sticky-bottom-install__text {
+        color: #FFF;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 20px; /* 125% */
+    }
+
+    .sticky-bottom-install__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        z-index: 11;
+    }
+
+    .sticky-install-button__app-store-download {
+        height: 48px;
+        width: auto;
+    }
+
+</style></head> <body> <div class=container> <header id=header dir=ltr class=header> <div class=white-fix></div> <a href=https://eightify.app><img src=/seo-static/logo.svg alt=Eightify width=172 height=40></a> </header> <div class=column-container> <div class=column1> <div> <h1 class=h1>Makers Fellowship: Free Entrepreneurship Education &amp; Mentorship</h1> <div class="disclaimer show-mobile"> <div class=disclaimer-video> <style>
+        .full {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            object-fit: cover;
+        }
+    </style> <div id=iframe-disclaimer-video-mobile class="iframe-disclaimer-video full" data-src=mwyKVXSiN6M></div> <div class="disclaimer-video-play-btn full"> <picture class=full> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/mwyKVXSiN6M/hqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/mwyKVXSiN6M/sddefault.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/mwyKVXSiN6M/hqdefault.jpg> <img alt="Play video" class=full src=https://i.ytimg.com/vi/mwyKVXSiN6M/sddefault.jpg loading=eager> </picture> <svg version=1.1 viewbox="0 0 68 48" width=68px style="position: relative;"> <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill=#f00></path> <path d="M 45,24 27,14 27,34" fill=#fff></path> </svg> </div> </div> <div class=disclaimer-text>This article is a summary of a YouTube video "Open Chat with Andres Bilbao - Makers Fellowship" by Makers Fellowship </div> </div> </div> <div class=tldr><span class=tldr-label>TLDR</span> The Makers Fellowship program aims to provide free entrepreneurship education and mentorship to young individuals, particularly low-income engineers, in order to train them to create successful businesses in the future.</div> <div style="margin: 24px 0"> </div> <div class=insights-block> <h3>Support and Opportunities for Entrepreneurs</h3> <ul class=insights> <li class=insights-item> <div>📈</div> <div>He has also been involved in the investing side, having helped start around 15-16 businesses, indicating his experience and success in identifying and supporting promising ventures.</div> </li> <li class=insights-item> <div>💪</div> <div>It is important to have a strong commitment to developing young talent in order to create opportunities for them in their careers.</div> </li> <li class=insights-item> <div>💪</div> <div>"I've always had a very strong belief that you should professionally at least treat all these folks how you'd like to be treated in many respects."</div> </li> <li class=insights-item> <div>💼</div> <div>Many former makers have successfully transitioned into entrepreneurship, with some raising significant funding for their businesses.</div> </li> <li class=insights-item> <div>🚀</div> <div>The program provides participants with mentorship from top founders, emphasizing the importance of guidance and support in the entrepreneurial journey.</div> </li> <li class=insights-item> <div>🚀</div> <div>The program's unique approach of including both entrepreneurs and fellows in their batches showcases their commitment to fostering a diverse and dynamic community of talented individuals within the startup ecosystem.</div> </li> <li class=insights-item> <div>💰</div> <div>The Makers Fellowship is free because entrepreneurship education should be accessible to all, and the program is funded by the speaker who believes in its value.</div> </li> <li class=insights-item> <div>🌱</div> <div>The program focuses on providing entrepreneurship and founder training, recognizing the importance of developing business skills for those who want to build successful businesses.</div> </li> <li class=insights-item> <div>💰</div> <div>Makers Fellowship offers fundraising support, including advice and introductions to VCs and <a class=keyword-link href=/summary/entrepreneurship-and-venture-capital/essential-fundraising-pitch-must-haves-for-angel-investors>angel investors</a>, to early-stage startups.</div> </li> <li class=insights-item> <div>🤝</div> <div>The Makers Fellowship expects to introduce founders to venture capitalists and invest time and resources only in businesses and founders that meet their high standards.</div> </li> </ul> <h3>Community and Networking in the Startup Ecosystem</h3> <ul class=insights> <li class=insights-item> <div>📲</div> <div>The power of connections within the makers community can make opportunities more accessible, bridging the gap between different countries and cultures.</div> </li> <li class=insights-item> <div>📊</div> <div>The McKinsey training on problem-solving and understanding KPIs and OKIs was highly regarded and enjoyed by the previous cohort.</div> </li> </ul> </div> <div class=related> <div class=related-videos__header> Browse more <a class=related-videos__link href=https://eightify.app/summary/mathematics>Mathematics</a> </div> <ul class=related-videos__list> <li class=related-video__container> <a class=related-video href=https://eightify.app/summary/mathematics/mf2-cohort-kickoff-makers-fellowship-program> <picture> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/RI8eTYVCpWM/mqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/RI8eTYVCpWM/default.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/RI8eTYVCpWM/mqdefault.jpg> <img alt src=https://i.ytimg.com/vi/RI8eTYVCpWM/default.jpg loading=lazy> </picture> <p class=related-video__title>MF2 Cohort Kickoff: Makers Fellowship Program</p> </a> </li> <li class=related-video__container> <a class=related-video href=https://eightify.app/summary/mathematics/empowering-young-entrepreneurs-supporting-kids-dreams-and-success> <picture> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/tRQLCPcC7f0/mqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/tRQLCPcC7f0/default.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/tRQLCPcC7f0/mqdefault.jpg> <img alt src=https://i.ytimg.com/vi/tRQLCPcC7f0/default.jpg loading=lazy> </picture> <p class=related-video__title>Empowering Young Entrepreneurs: Supporting Kids' Dreams and Success</p> </a> </li> <li class=related-video__container> <a class=related-video href=https://eightify.app/summary/mathematics/tech-entrepreneurship-an-overview> <picture> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/MvPTVgGUsyc/mqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/MvPTVgGUsyc/default.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/MvPTVgGUsyc/mqdefault.jpg> <img alt src=https://i.ytimg.com/vi/MvPTVgGUsyc/default.jpg loading=lazy> </picture> <p class=related-video__title>Tech & Entrepreneurship: An Overview</p> </a> </li> <li class=related-video__container> <a class=related-video href=https://eightify.app/summary/mathematics/starting-an-association-and-making-a-living-a-guide> <picture> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/ZM3zkmJHgy0/mqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/ZM3zkmJHgy0/default.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/ZM3zkmJHgy0/mqdefault.jpg> <img alt src=https://i.ytimg.com/vi/ZM3zkmJHgy0/default.jpg loading=lazy> </picture> <p class=related-video__title>Starting an Association and Making a Living: A Guide</p> </a> </li> <li class=related-video__container> <a class=related-video href=https://eightify.app/summary/mathematics/entrepreneurship-from-idea-to-investment-startup-accelerator-course> <picture> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/gGUgW5MOB7M/mqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/gGUgW5MOB7M/default.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/gGUgW5MOB7M/mqdefault.jpg> <img alt src=https://i.ytimg.com/vi/gGUgW5MOB7M/default.jpg loading=lazy> </picture> <p class=related-video__title>Entrepreneurship: From Idea to Investment - Startup Accelerator Course</p> </a> </li> <li class=related-video__container> <a class=related-video href=https://eightify.app/summary/mathematics/entrepreneurship-and-business-creation-entrepreneurial-ecosystem> <picture> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/7h7I0Y1gfkU/mqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/7h7I0Y1gfkU/default.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/7h7I0Y1gfkU/mqdefault.jpg> <img alt src=https://i.ytimg.com/vi/7h7I0Y1gfkU/default.jpg loading=lazy> </picture> <p class=related-video__title>Entrepreneurship and Business Creation - Entrepreneurial Ecosystem</p> </a> </li> </ul> </div> <div class=timestamped-summary> <h2 class=h2>Timestamped Summary</h2> <ul class=key-ideas> <li class=key-ideas-item> <div>📚</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=0> 00:00 </span> <div class=key-ideas-item__title>The speaker, with a strong background in entrepreneurship, emphasizes their commitment to developing young individuals and highlights the success of the Makers Fellowship in hiring and mentoring highly skilled recruits.</div> </div> </li> <li class=key-ideas-item> <div>📝</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=862> 14:22 </span> <div class=key-ideas-item__title>Latin American makers from Brazil, Mexico, Argentina, Colombia, and Peru came together to promote entrepreneurship and showcase successful businesses, with a focus on training a large number of makers to create successful businesses in the future through internships, skills training, and guidance in fundraising and startup mindset.</div> </div> </li> <li class=key-ideas-item> <div>👥</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=1183> 19:43 </span> <div class=key-ideas-item__title>The makers community aims to make valuable content accessible to a wider audience, particularly low-income individuals, by providing free entrepreneurship education and matching exceptional low-income engineers with suitable startups through their Makers Fellowship program.</div> </div> </li> <li class=key-ideas-item> <div>📚</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=1715> 28:35 </span> <div class=key-ideas-item__title>The Makers Fellowship program offers two different fellowships for interns/new recruits and early stage founders, providing training in entrepreneurial skills and hard/soft skills, with monthly themes, mentorship, and access to educational resources for individuals aged 18-24.</div> </div> </li> <li class=key-ideas-item> <div>📝</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=2132> 35:32 </span> <div class=key-ideas-item__title>The Makers Fellowship program is accepting applications for its upcoming batch, offering opportunities for business and coding fellows to start their own startups and learn from experienced entrepreneurs, with a focus on developing the ecosystem.</div> </div> </li> <li class=key-ideas-item> <div>💡</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=2667> 44:27 </span> <div class=key-ideas-item__title>It is important to build a relationship with the company and it is recommended for students to complete their studies before joining a startup, but dropping out of college to work as a software engineer is not uncommon and technical skills are valued over a degree.</div> </div> </li> <li class=key-ideas-item> <div>📝</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=3070> 51:10 </span> <div class=key-ideas-item__title>Join the Makers community and apply to their technical program, especially if there's a chance to work under a female technical founder, as they are looking for someone with <a class=keyword-link href=/summary/technology-and-programming/mastering-devops-ci-cd-pipeline-automation-devops-vs-sre>devops</a> experience; working at a top startup can provide valuable exposure to talented individuals and help in <a class=keyword-link href=/summary/personal-development-and-relationships/importance-of-understanding-sympathy-and-gratitude-talkshow>understanding</a> what makes a great team, making it easier to recruit and build a successful business.</div> </div> </li> <li class=key-ideas-item> <div>📝</div> <div class=key-ideas-item__container> <span class=key-ideas-item__timestamp data-stime=3431> 57:11 </span> <div class=key-ideas-item__title>Applicants for the fellowship should focus on doing their best, as there are no specific skills or areas of study prioritized; <a class=keyword-link href=/summary/entrepreneurship/starting-a-business-valuable-skills-to-build-success>starting a business</a> in Venezuela is unlikely to receive venture backing, except for rare cases; remote work is available for fellows with no constraints or pay reduction, regardless of location.</div> </div> </li> </ul> </div> <div style="margin: 24px 0"> </div> </div> <div class=column2> <div class="disclaimer show-desktop"> <div class=disclaimer-video> <style>
+        .full {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            object-fit: cover;
+        }
+    </style> <div id=iframe-disclaimer-video-desktop class="iframe-disclaimer-video full" data-src=mwyKVXSiN6M></div> <div class="disclaimer-video-play-btn full"> <picture class=full> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/webp srcset=https://i.ytimg.com/vi_webp/mwyKVXSiN6M/hqdefault.webp> <source type=image/webp srcset=https://i.ytimg.com/vi_webp/mwyKVXSiN6M/sddefault.webp> <source media="(min-resolution: 192dpi), (min-width: 640px)" type=image/jpeg srcset=https://i.ytimg.com/vi/mwyKVXSiN6M/hqdefault.jpg> <img alt="Play video" class=full src=https://i.ytimg.com/vi/mwyKVXSiN6M/sddefault.jpg loading=eager> </picture> <svg version=1.1 viewbox="0 0 68 48" width=68px style="position: relative;"> <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill=#f00></path> <path d="M 45,24 27,14 27,34" fill=#fff></path> </svg> </div> </div> <div class=disclaimer-text>This article is a summary of a YouTube video "Open Chat with Andres Bilbao - Makers Fellowship" by Makers Fellowship </div> </div> <div style="margin: 24px 0"> </div> <div id=vote-container class=vote> <div class=vote__section> <span class=vote__title> 3.4 (10 votes) </span> </div> <div class=vote__section> <div class=rating-container> <div class=rating-feedback> <div class=rating> <input type=radio name=rating id=rating-5> <label class=__rate data-rate=5 for=rating-5></label> <input type=radio name=rating id=rating-4> <label class=__rate data-rate=4 for=rating-4></label> <input checked type=radio name=rating id=rating-3> <label class=__rate data-rate=3 for=rating-3></label> <input type=radio name=rating id=rating-2> <label class=__rate data-rate=2 for=rating-2></label> <input type=radio name=rating id=rating-1> <label class=__rate data-rate=1 for=rating-1></label> </div> </div> </div> </div> </div> <div class="article-actions show-desktop"> <div class=article-actions-container> <button type=button class=article-actions__flag> <img width=16 height=19 src=/seo-static/flag.svg alt=flag class="article-actions__flag-icon article-actions__flag-icon_default"> <img width=16 height=19 src=/seo-static/flag-active.svg alt="red flag" class="article-actions__flag-icon article-actions__flag-icon_active"> <span class="article-actions__flag-text article-actions__flag-text_inactive">Report the article</span> <span class="article-actions__flag-text article-actions__flag-text_active">Article reported</span> </button> </div> </div> </div> </div> <div class="feedback show-mobile"> <div class=feedback__actions> <div class=article-actions-container> <button type=button class=article-actions__flag> <img width=16 height=19 src=/seo-static/flag.svg alt=flag class="article-actions__flag-icon article-actions__flag-icon_default"> <img width=16 height=19 src=/seo-static/flag-active.svg alt="red flag" class="article-actions__flag-icon article-actions__flag-icon_active"> <span class="article-actions__flag-text article-actions__flag-text_inactive">Report the article</span> <span class="article-actions__flag-text article-actions__flag-text_active">Article reported</span> </button> </div> </div> </div> <div class=breadcrumbs> <a href=/summary>Summaries</a> → <a href=/summary/mathematics>Mathematics</a> → <span class=current>Makers Fellowship: Free Entrepreneurship Education &amp; Mentorship</span> </div> <div style="margin-bottom: -110px; /* Compensate for footer margin */"></div> <div class="report-article-modal report-article-modal--reasons"> <div class=report-article-modal__block> <div class=report-article-modal__close> <button type=button class=report-article-modal__close-button> <img width=17 height=17 src=/seo-static/close.svg alt=Close> </button> </div> <div class="report-article-modal__header report-article-modal__header_reasons"> <img width=56 height=72 class=report-article-modal__flag src=/seo-static/flag_modal.svg alt="Report the article"> Report the article </div> <div class="report-article-modal__header report-article-modal__header_description report-article-modal__header_thanks"> <img width=64 height=72 class=report-article-modal__checkmark src=/seo-static/checkmark.svg alt="Thanks for feedback"> Thank you for the feedback </div> <div class=report-article-modal__form> <div class=report-article-modal__reasons> <button type=button class=report-article-modal__reason data-reason=misinformation> <img width=16 height=22 src=/seo-static/misinformation.svg alt=Misinformation> <span>Misinformation</span> </button> <button type=button class=report-article-modal__reason data-reason=offensive_content> <img width=16 height=22 src=/seo-static/offensive_content.svg alt="Offensive Content"> <span>Offensive Content</span> </button> <button type=button class=report-article-modal__reason data-reason=low_quality> <img width=16 height=22 src=/seo-static/low_quality.svg alt="Low Quality"> <span>Low Quality</span> </button> <button type=button class=report-article-modal__reason data-reason=copyright_violation> <img width=16 height=22 src=/seo-static/copyright_violation.svg alt="Copyright Violation"> <span>Copyright Violation</span> </button> <button type=button class=report-article-modal__reason data-reason=privacy_violation> <img width=16 height=22 src=/seo-static/privacy_violation.svg alt="Privacy Violation"> <span>Privacy Violation</span> </button> <button type=button class=report-article-modal__reason data-reason=spam> <img width=16 height=22 src=/seo-static/spam.svg alt=Spam> <span>Spam</span> </button> <button type=button class=report-article-modal__reason data-reason=tech_issues> <img width=16 height=22 src=/seo-static/tech_issues.svg alt="Tech Issues"> <span>Tech Issues</span> </button> <form class=report-article-modal__description-input> <div class=grow-wrap> <textarea required rows=1 placeholder="Other (specify)" oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea> </div> <button type=submit class="report-article-modal__description-submit report-article-modal__description-submit--inactive"> <img width=16 height=22 src=/seo-static/send_inactive.svg alt=Send> </button> <button type=submit class="report-article-modal__description-submit report-article-modal__description-submit--active"> <img width=16 height=22 src=/seo-static/send_active.svg alt=Send> </button> </form> </div> <div class=report-article-modal__thanks> <p class=report-article-modal__description-additional> We’ve got the additional info </p> <button type=button class=report-article-modal__description-button> Return to the article </button> </div> <div class=report-article-modal__description> <button type=button class=report-article-modal__description-button> Return to the article </button> <form class=report-article-modal__description-input> <div class=grow-wrap> <textarea required rows=1 placeholder="Specify info" oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea> </div> <button type=submit class="report-article-modal__description-submit report-article-modal__description-submit--inactive"> <img width=16 height=22 src=/seo-static/send_inactive.svg alt=Send> </button> <button type=submit class="report-article-modal__description-submit report-article-modal__description-submit--active"> <img width=16 height=22 src=/seo-static/send_active.svg alt=Send> </button> </form> </div> </div> </div> </div> <script>
+    (function () {
+        const bannerElements = document.querySelectorAll('.lbs');
+
+        bannerElements.forEach(el => {
+            el.addEventListener('click', () => {
+                el.querySelector('a.lbs-button')?.click();
+            })
+        })
+    })()
+</script> <script>
+    (function () {
+        const bannerElements = document.querySelectorAll('.lbm');
+
+        bannerElements.forEach(el => {
+            el.addEventListener('click', () => {
+                el.querySelector('a.lbm-button')?.click()
+            })
+        })
+    })()
+</script> <script>
+    (function () {
+        const bannerElements = document.querySelectorAll('.lbl');
+
+        bannerElements.forEach(el => {
+            el.addEventListener('click', () => {
+                el.querySelector('a.lbl-button')?.click();
+            })
+        })
+    })()
+</script> <script defer>
+(() => {
+    console.log("loaded rating bindings");
+
+    const stars = document.querySelectorAll(".__rate");
+    if (!stars.length) {
+        console.log("no stars");
+        return;
+    }
+
+    const handleStarClick = (e) => {
+        const rate = e.target.dataset.rate;
+
+        // URL and endpoint
+        let url = `/api/rate/153414`;
+
+        // Request body
+        let data = {
+            rate
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Converts JS object to JSON string
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        }).then(data => {
+            console.log('Success:', data);
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    for (let i = 0; i < stars.length; i++) {
+        const _current = stars[i];
+
+        _current.addEventListener("click", handleStarClick)
+    }
+})()
+</script> <script>
+(function () {
+    const desktopDisclaimerEl = document.querySelector(
+        ".disclaimer.show-desktop"
+    );
+    const contentEl = document.querySelector(".column1");
+
+    if (!desktopDisclaimerEl || !contentEl) {
+        return;
+    }
+
+    let player = null;
+
+    function initPlayer(disclaimerVideoBlock, cb) {
+        function runCb(tmpPlayer) {
+            if (typeof cb === 'function') {
+                cb(tmpPlayer);
+            }
+        }
+
+        if (player != null) {
+            runCb(player);
+
+            return;
+        }
+
+        let onPlayerReady = function (event) {
+            let tmpPlayer = event.target;
+            tmpPlayer.playVideo();
+            if (disclaimerVideoBlock.getElementsByTagName('iframe')[0]) {
+                disclaimerVideoBlock.querySelector('.disclaimer-video-play-btn').remove();
+
+                runCb(tmpPlayer);
+            }
+        };
+
+        let iframe = disclaimerVideoBlock.querySelector('.iframe-disclaimer-video');
+        let iframeId = iframe.getAttribute('id');
+        let videoSrc = iframe.getAttribute('data-src');
+
+        player = new YT.Player(iframeId, {
+            videoId: videoSrc,
+            playerVars: {
+                playsinline: 1,
+                rel: 0
+            },
+            events: {
+                onReady: onPlayerReady
+            }
+        });
+    }
+
+    let disclaimerVideoBlocks = document.querySelectorAll('.disclaimer-video');
+    disclaimerVideoBlocks.forEach(function (disclaimerVideoBlock) {
+        let playBtn = disclaimerVideoBlock.querySelector('.disclaimer-video-play-btn');
+
+        playBtn.addEventListener('click', function () {
+            initPlayer(disclaimerVideoBlock, null);
+        });
+    });
+
+    function checkIsMobile() {
+        let mobileDisclaimerEl = document.querySelector(".disclaimer.show-mobile");
+
+        let displayValue = window.getComputedStyle(mobileDisclaimerEl).getPropertyValue('display');
+
+        return displayValue !== 'none';
+    }
+
+    let timestampBtns = document.querySelectorAll('.key-ideas-item__timestamp');
+    timestampBtns.forEach(function (timestampBtn) {
+        timestampBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            let stime = timestampBtn.getAttribute('data-stime');
+
+            if (player == null) {
+                let elPrefix = checkIsMobile() ? "mobile" : "desktop";
+                let disclaimerVideoBlock = document.getElementById(`iframe-disclaimer-video-${elPrefix}`).parentNode;
+
+                initPlayer(disclaimerVideoBlock, (tmpPlayer) => {
+                    tmpPlayer.seekTo(stime);
+                });
+            } else {
+                player.seekTo(stime);
+            }
+        });
+    });
+})();
+</script> <script>
+    const state = {};
+    const activeFlagButtonClass = 'article-actions__flag_flagged';
+    const activeReportArticleModalClass = 'report-article-modal_active';
+    const modalReasonsStateClass = 'report-article-modal--reasons';
+    const modalDescriptionStateClass = 'report-article-modal--description';
+    const modalThanksStateClass = 'report-article-modal--thanks';
+    const modalDescriptionSubmitActiveClass = 'report-article-modal--submit-active';
+    const modalDescriptionSubmitInactiveClass = 'report-article-modal--submit-inactive';
+
+    const reportArticleButtons = document.querySelectorAll('.article-actions__flag');
+    const reportArticleModal = document.querySelector('.report-article-modal');
+    const reportArticleModalBlock = document.querySelector('.report-article-modal__block');
+    const reportArticleModalCloseButton = document.querySelector('.report-article-modal__close-button');
+    const reportArticleModalReasonOptions = document.querySelectorAll('.report-article-modal__reason');
+    const reportArticleModalDescriptionButtons = document.querySelectorAll('.report-article-modal__description-button');
+    const reportArticleDescriptionTextAreaElements = document.querySelectorAll('.report-article-modal__description-input textarea');
+    const reportArticleModalDescriptionSubmitButton = document.querySelectorAll('.report-article-modal__description-submit--active')
+
+    reportArticleModal.classList.add(modalDescriptionSubmitInactiveClass)
+
+    function getUserReport() {
+        let userReports = []
+
+        try {
+            const json = localStorage.getItem('userReports');
+
+            if (json) {
+                userReports = JSON.parse(json);
+            }
+
+        } catch (e) {
+            console.error(e);
+        }
+
+        return userReports.find(report => report.page === location.pathname)
+    }
+
+    function saveReportLocally(data) {
+        let userReports = []
+
+        try {
+            const json = localStorage.getItem('userReports');
+
+            if (json) {
+                userReports = JSON.parse(json);
+            }
+
+        } catch (e) {
+            console.error(e);
+        }
+
+        const reportIndex = userReports.findIndex(report => report.page === location.pathname)
+        if (reportIndex !== -1) {
+            userReports[reportIndex] = {
+                page: location.pathname,
+                ...userReports[reportIndex],
+                ...data,
+            }
+        } else {
+            userReports.push({
+                page: location.pathname,
+                ...data
+            })
+        }
+
+        localStorage.setItem('userReports', JSON.stringify(userReports));
+    }
+
+    function showReportArticleModal() {
+        const userReport = getUserReport();
+
+        reportArticleModal.classList.remove(modalReasonsStateClass);
+        reportArticleModal.classList.remove(modalDescriptionStateClass);
+        reportArticleModal.classList.remove(modalThanksStateClass);
+
+        if (userReport?.description) {
+            reportArticleModal.classList.add(modalThanksStateClass);
+        } else if (userReport) {
+            state['report_id'] = userReport.uuid;
+            reportArticleModal.classList.add(modalDescriptionStateClass);
+        } else {
+            reportArticleModal.classList.add(modalReasonsStateClass);
+        }
+
+        reportArticleModal.classList.add(activeReportArticleModalClass);
+
+        
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hideReportArticleModal() {
+        reportArticleModal.classList.remove(activeReportArticleModalClass);
+
+        
+        document.body.style.overflow = null;
+    }
+
+    function sendRequest(url, data) {
+        return fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Converts JS object to JSON string
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        }).then(data => {
+            console.log('Success:', data);
+
+            return data;
+        }).catch(error => {
+            console.error('Error:', error);
+
+            return null;
+        });
+    }
+
+    async function sendReportArticle() {
+        // URL and endpoint
+        let url = `/api/report/page/153414`;
+
+        // Request body
+        const data = {
+            reason: state['reason'] || 'other',
+            description: state['description'] || null
+        };
+
+        const response = await sendRequest(url, data)
+
+        if (!response) {
+            return;
+        }
+
+        state['report_id'] = response['uuid']
+
+        reportArticleButtons.forEach(el => {
+            el.classList.add(activeFlagButtonClass);
+        })
+
+        saveReportLocally({
+            uuid: response['uuid'],
+            ...data,
+        })
+    }
+
+    async function sendDescription() {
+        const report_id = state['report_id']
+        const url = `/api/report/${report_id}/description`;
+        const data = {
+            description: state['description'],
+        };
+        const response = await sendRequest(url, data);
+
+        if (!response) {
+            return;
+        }
+
+        saveReportLocally(data)
+    }
+
+
+    
+    reportArticleButtons.forEach(el => {
+        el.addEventListener('click', () => {
+            showReportArticleModal();
+        })
+    });
+
+    
+    reportArticleModal.addEventListener('click', el => {
+        let targetParentEl = el.target;
+        let clickOnModalBlockEl = false;
+
+        while (targetParentEl) {
+            if (targetParentEl === reportArticleModalBlock) {
+                clickOnModalBlockEl = true;
+                break;
+            }
+
+            targetParentEl = targetParentEl.parentElement;
+        }
+
+        if (!clickOnModalBlockEl) {
+            hideReportArticleModal();
+        }
+    })
+
+    
+    reportArticleModalDescriptionSubmitButton.forEach(el => {
+            el.addEventListener('click', (event) => {
+                event.preventDefault()
+                if (state['report_id']) {
+                    sendDescription();
+                } else {
+                    sendReportArticle();
+                }
+                reportArticleModal.classList.remove(modalReasonsStateClass);
+                reportArticleModal.classList.remove(modalDescriptionStateClass);
+                reportArticleModal.classList.add(modalThanksStateClass);
+            })
+        }
+    )
+
+    
+    reportArticleModalCloseButton.addEventListener('click', () => {
+        hideReportArticleModal();
+    })
+
+    
+    reportArticleModalDescriptionButtons.forEach(el => {
+        el.addEventListener('click', () => {
+            hideReportArticleModal()
+        })
+    })
+
+    
+    reportArticleModalReasonOptions.forEach(el => {
+        el.addEventListener('click', () => {
+            state['reason'] = el.dataset.reason;
+            sendReportArticle()
+
+            reportArticleModal.classList.remove(modalReasonsStateClass);
+            reportArticleModal.classList.add(modalDescriptionStateClass);
+        })
+    })
+
+    reportArticleDescriptionTextAreaElements.forEach(el => {
+        el.addEventListener('input', () => {
+            const description = el.value;
+            state['description'] = description
+            if (description.length > 0) {
+                reportArticleModal.classList.remove(modalDescriptionSubmitInactiveClass)
+                reportArticleModal.classList.add(modalDescriptionSubmitActiveClass)
+            } else {
+                reportArticleModal.classList.remove(modalDescriptionSubmitActiveClass)
+                reportArticleModal.classList.add(modalDescriptionSubmitInactiveClass)
+            }
+        })
+    })
+
+    if (!!getUserReport()) {
+        reportArticleButtons.forEach(el => {
+            el.classList.add(activeFlagButtonClass);
+        })
+    }
+
+</script> </div> <style>
+    .footer {
+        padding: 24px 16px 32px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        margin-top: 80px;
+    }
+
+    .footer__inner {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer__logo-name-year {
+        font-family: 'Inter', 'Verdana', 'Arial', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.22;
+        color: rgba(0, 0, 0);
+        min-width: 384px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .footer__company-name {
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+
+    @media screen and (max-width: 640px) {
+        .footer__logo-name-year {
+            width: 100%;
+            min-width: 284px;
+        }
+    }
+
+    .footer__logo {
+        width: 48px;
+        margin-right: 12px;
+        margin-top: 4px;
+    }
+
+    .footer-links-container {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 16px
+    }
+
+    .footer-links {
+        min-width: 160px;
+        list-style: none;
+    }
+
+    .footer-link {
+        margin-bottom: 8px;
+        max-width: 180px;
+    }
+
+    .footer-link-item {
+        font-size: 18px;
+        line-height: 1.22;
+        color: rgba(0, 0, 0, 0.48);
+        text-decoration: none;
+        transition: color .12s ease;
+    }
+
+    .footer-link-item:hover {
+        color: rgba(0, 0, 0, 0.64);
+    }
+
+    @media screen and (min-width: 640px) {
+        .footer {
+            padding: 24px 10px 32px;
+        }
+
+        .footer-links-container {
+            gap: 24px
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .footer-link {
+            max-width: 160px;
+        }
+
+        .footer-links__legal {
+            order: 0;
+        }
+
+        .footer-links__social {
+            order: 1;
+        }
+
+        .footer-links__seo {
+            order: 2;
+        }
+
+        .footer-links__language {
+            order: 3;
+        }
+
+    }
+
+    .language-select {
+        border: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        min-width: 160px;
+    }
+
+    .language-select:focus {
+        color: rgba(0, 0, 0, 0.64);
+    }
+
+</style> </body> </html>

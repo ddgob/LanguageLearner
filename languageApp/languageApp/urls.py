@@ -19,12 +19,17 @@ from django.urls import path
 from mainApp.views import read_content
 from mainApp.views import flashcards
 from mainApp.views import translate
-from mainApp.views import view_content
+from mainApp.views import view_content, read_content, flashcards
+from mainApp.views import content, read_content, flash_cards, article1_display
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('read_content', read_content),
-    path('flashcards', flashcards),
+    path('flash_cards', flashcards),
     path('translate/', translate, name='translate'),
-    path('view_content', view_content)
+    path('view_content', view_content),
+    path('', content, name='content'),
+    path('read/', read_content, name='read_content'),
+    path('flash-cards/', flash_cards, name='flash_cards'),
+    path('article1_display/', article1_display, name='article1_display'),
 ]

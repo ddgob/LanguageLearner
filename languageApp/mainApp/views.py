@@ -6,8 +6,18 @@ from .models import Content
 from .models import Flashcard
 # Create your views here.
 
+def view_content(request):
+    contents = Content.objects.all()
+    contentTitles = [content.title for content in contents]
+    return render(request, "mainApp/view_content.html", {'titles': contentTitles})
+
 def read_content(request):
     contents = Content.objects.all()
+    context = {
+        'title': 'Cha Cha Learning',
+        'description': 'Welcome to Cha Cha Learning, your go-to platform for learning a new language. Whether you are a beginner or looking to enhance your language skills, we have resources and tools to make your language learning journey enjoyable and effective.',
+        'cta': 'Get Started',
+    }
     return render(request, "mainApp/read_content.html", {'contents': contents})
 
 def flashcards(request):
@@ -33,9 +43,22 @@ def translate(request):
             return JsonResponse({'error': 'Error from OpenAI API'}, status=500)
     else:
         return JsonResponse({'error': 'Invalid request'}, status=400)
-    
 
-def view_content(request):
-    contents = Content.objects.all()
-    contentTitles = [content.title for content in contents]
-    return render(request, "mainApp/view_content.html", {'titles': contentTitles})
+def content(request):
+    context = {
+        'title': 'Cha Cha Learning',
+        'description': 'Welcome to Cha Cha Learning, your go-to platform for learning a new language. Whether you are a beginner or looking to enhance your language skills, we have resources and tools to make your language learning journey enjoyable and effective.',
+        'cta': 'Get Started',
+    }
+    return render(request, "mainApp/content.html")
+
+def read_content(request):
+    # Placeholder view for the 'Read' button
+    return render(request, 'mainApp/read_content.html')
+
+def flash_cards(request):
+    # Placeholder view for the 'Flash Cards' button
+    return render(request, 'mainApp/flash_cards.html')
+
+def article1_display(request):
+    return render(request, 'mainApp/article1_display.html')
