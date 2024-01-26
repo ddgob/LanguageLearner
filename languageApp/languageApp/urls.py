@@ -21,4 +21,5 @@ from mainApp.views import content
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('content', content),
+    path('', content, name='content')
 ]
